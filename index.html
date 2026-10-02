@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone Diagnostics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-row">
+          <div class="brand-icon">i</div>
+          <div>
+            <p class="eyebrow">Apple Device Monitor</p>
+            <h1>iPhone Diagnostics</h1>
+          </div>
+        </div>
+        <div class="status-pill connected" id="connectStatus">Connected</div>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p class="label">USB Device Status</p>
+            <h2 id="deviceName">iPhone 15 Pro</h2>
+            <p id="usbText">Detected over USB. Diagnostic data is being collected.</p>
+          </div>
+          <div class="hero-actions">
+            <button id="scanBtn">Scan Device</button>
+            <button id="refreshBtn" class="secondary">Refresh</button>
+          </div>
+        </section>
+
+        <div class="warning-box" role="alert">
+          <strong>Important:</strong> A browser page cannot directly access an iPhone's private hardware identifiers, serial number, IMEI, app list, or full filesystem. This page is a front-end diagnostic prototype that displays browser-visible data and a realistic device summary. Full hardware access requires a native app, Apple device support, or a trusted desktop bridge.
+        </div>
+
+        <section class="metrics-grid" id="metricsGrid"></section>
+
+        <section class="panel details-panel">
+          <div class="panel-header">
+            <h3>Device Information</h3>
+            <span class="badge">Live</span>
+          </div>
+          <div id="deviceInfoList" class="detail-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
